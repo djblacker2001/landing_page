@@ -63,8 +63,27 @@ export function Impact() {
                         Giúp doanh nghiệp <span className="text-white font-bold">NHÌN - HIỂU - HÀNH ĐỘNG</span> trên dữ liệu thật,
                         từ đó tăng năng suất, giảm chi phí và phát triển bền vững.
                     </p>
-                    <div className="pt-8 flex justify-center">
-                        <ConsultationForm />
+                    <div id="consultation-form" className="pt-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch text-left">
+                        <div className="w-full min-h-[400px] h-full rounded-xl overflow-hidden border border-white/10 bg-white/5 relative group">
+                            <iframe
+                                src="https://maps.google.com/maps?q=Tr%C6%B0%E1%BB%9Dng%20Qu%E1%BB%91c%20t%E1%BA%BF%20Mi%E1%BB%81n%20%C4%90%C3%B4ng&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                className="absolute inset-0 w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500"
+                                style={{ border: 0 }}
+                                allowFullScreen
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                            />
+                            <div className="absolute bottom-0 left-0 right-0 p-4 bg-qwaste-dark/80 backdrop-blur-md border-t border-white/10">
+                                <p className="text-white font-medium text-sm flex items-center gap-2">
+                                    <span className="text-xl">📍</span>
+                                    Nam Kỳ Khởi Nghĩa, Định Hoà, Thủ Dầu Một, Bình Dương
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="flex justify-center lg:justify-end w-full">
+                            <ConsultationForm />
+                        </div>
                     </div>
                 </div>
             </div>

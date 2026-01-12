@@ -53,8 +53,11 @@ export function Hero() {
                                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                             </span>
                         </button>
-                        <button className="px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-semibold text-lg hover:bg-white/10 transition-colors backdrop-blur-sm">
-                            Liên hệ Demo
+                        <button
+                            onClick={() => document.getElementById('consultation-form')?.scrollIntoView({ behavior: 'smooth' })}
+                            className="px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-semibold text-lg hover:bg-white/10 transition-colors backdrop-blur-sm"
+                        >
+                            Liên hệ Team
                         </button>
                     </motion.div>
                 </motion.div>
