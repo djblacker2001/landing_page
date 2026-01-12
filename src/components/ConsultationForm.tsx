@@ -4,8 +4,10 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, CheckCircle2, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useTranslations } from 'next-intl';
 
 export function ConsultationForm() {
+    const t = useTranslations('Form');
     const [formState, setFormState] = useState({
         name: "",
         phone: "",
@@ -36,7 +38,7 @@ export function ConsultationForm() {
             console.error('Error submitting form:', error);
             // Optionally handle error state here, for now just reset to idle or show error
             // For simplicity in this demo, we might just stay in submitting or go back to idle
-            alert("Có lỗi xảy ra, vui lòng thử lại sau.");
+            alert(t('error'));
             setStatus("idle");
         }
     };
@@ -60,9 +62,9 @@ export function ConsultationForm() {
                         <div className="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center">
                             <CheckCircle2 className="w-8 h-8 text-green-400" />
                         </div>
-                        <h3 className="text-xl font-bold text-white">Đã gửi yêu cầu!</h3>
+                        <h3 className="text-xl font-bold text-white">{t('success')}</h3>
                         <p className="text-zinc-400">
-                            Cảm ơn bạn đã quan tâm. Đội ngũ QWaste sẽ liên hệ với bạn trong thời gian sớm nhất.
+                            {t('subtitle')}
                         </p>
                         <button
                             onClick={() => {
@@ -71,7 +73,7 @@ export function ConsultationForm() {
                             }}
                             className="mt-4 text-sm text-qwaste-accent hover:text-white transition-colors"
                         >
-                            Gửi yêu cầu khác
+                            {t('submit')}
                         </button>
                     </motion.div>
                 ) : (
@@ -83,8 +85,8 @@ export function ConsultationForm() {
                         className="space-y-4"
                     >
                         <div className="text-center mb-6">
-                            <h3 className="text-xl font-bold text-white mb-2">Đăng ký Tư vấn</h3>
-                            <p className="text-sm text-zinc-400">Để lại thông tin để được hỗ trợ chi tiết về giải pháp</p>
+                            <h3 className="text-xl font-bold text-white mb-2">{t('title')}</h3>
+                            <p className="text-sm text-zinc-400">{t('subtitle')}</p>
                         </div>
 
                         <div className="space-y-4">
@@ -93,7 +95,7 @@ export function ConsultationForm() {
                                     type="text"
                                     name="name"
                                     required
-                                    placeholder="Họ và tên"
+                                    placeholder={t('name')}
                                     value={formState.name}
                                     onChange={handleChange}
                                     className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-zinc-500 focus:outline-none focus:border-qwaste-accent focus:ring-1 focus:ring-qwaste-accent transition-all"
@@ -105,7 +107,7 @@ export function ConsultationForm() {
                                     type="tel"
                                     name="phone"
                                     required
-                                    placeholder="Số điện thoại"
+                                    placeholder={t('phone')}
                                     value={formState.phone}
                                     onChange={handleChange}
                                     className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-zinc-500 focus:outline-none focus:border-qwaste-accent focus:ring-1 focus:ring-qwaste-accent transition-all"
@@ -117,7 +119,7 @@ export function ConsultationForm() {
                                     type="email"
                                     name="email"
                                     required
-                                    placeholder="Email doanh nghiệp"
+                                    placeholder={t('email')}
                                     value={formState.email}
                                     onChange={handleChange}
                                     className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-zinc-500 focus:outline-none focus:border-qwaste-accent focus:ring-1 focus:ring-qwaste-accent transition-all"
@@ -128,7 +130,7 @@ export function ConsultationForm() {
                                 <textarea
                                     name="message"
                                     rows={3}
-                                    placeholder="Nhu cầu cần tư vấn..."
+                                    placeholder={t('message')}
                                     value={formState.message}
                                     onChange={handleChange}
                                     className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-zinc-500 focus:outline-none focus:border-qwaste-accent focus:ring-1 focus:ring-qwaste-accent transition-all resize-none"
@@ -144,11 +146,11 @@ export function ConsultationForm() {
                             {status === "submitting" ? (
                                 <>
                                     <Loader2 className="w-5 h-5 animate-spin" />
-                                    Đang gửi...
+                                    {t('submitting')}
                                 </>
                             ) : (
                                 <>
-                                    Gửi đăng ký
+                                    {t('submit')}
                                     <Send className="w-4 h-4" />
                                 </>
                             )}

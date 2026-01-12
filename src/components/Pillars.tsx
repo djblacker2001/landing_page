@@ -2,49 +2,52 @@
 
 import { Section } from "./Section";
 import { ArrowRight, Clock, Gauge, DollarSign, Trophy, TrendingUp } from "lucide-react";
-
-const pillars = [
-    {
-        icon: Clock,
-        title: "Time",
-        desc: "Biến thời gian thành tài sản",
-        color: "text-blue-400"
-    },
-    {
-        icon: Gauge,
-        title: "Efficiency",
-        desc: "Tối ưu hóa hiệu suất",
-        color: "text-green-400"
-    },
-    {
-        icon: DollarSign,
-        title: "Cost",
-        desc: "Kiểm soát chi phí",
-        color: "text-yellow-400"
-    },
-    {
-        icon: Trophy,
-        title: "Competitiveness",
-        desc: "Nâng cao vị thế",
-        color: "text-purple-400"
-    },
-    {
-        icon: TrendingUp,
-        title: "Revenue",
-        desc: "Tăng trưởng doanh thu",
-        color: "text-red-400"
-    }
-];
+import { useTranslations } from 'next-intl';
 
 export function Pillars() {
+    const t = useTranslations('Pillars');
+
+    const pillars = [
+        {
+            icon: Clock,
+            title: t('time'),
+            desc: t('timeDesc'),
+            color: "text-blue-400"
+        },
+        {
+            icon: Gauge,
+            title: t('efficiency'),
+            desc: t('efficiencyDesc'),
+            color: "text-green-400"
+        },
+        {
+            icon: DollarSign,
+            title: t('cost'),
+            desc: t('costDesc'),
+            color: "text-yellow-400"
+        },
+        {
+            icon: Trophy,
+            title: t('competitiveness'),
+            desc: t('competitivenessDesc'),
+            color: "text-purple-400"
+        },
+        {
+            icon: TrendingUp,
+            title: t('revenue'),
+            desc: t('revenueDesc'),
+            color: "text-red-400"
+        }
+    ];
+
     return (
         <Section id="pillars" bg="qwaste">
             <div className="text-center mb-16 space-y-4">
                 <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/60">
-                    5 Trụ Cột Giá Trị
+                    {t('title')}
                 </h2>
                 <p className="max-w-2xl mx-auto text-qwaste-accent/80 md:text-lg">
-                    Mối liên kết chặt chẽ giữa hiệu quả vận hành và tăng trưởng doanh nghiệp
+                    {t('subtitle')}
                 </p>
             </div>
 

@@ -1,8 +1,11 @@
 "use client";
 
 import { Disc } from "lucide-react";
+import { useTranslations } from 'next-intl';
 
 export function Footer() {
+    const t = useTranslations('Footer');
+
     return (
         <footer className="bg-zinc-950 border-t border-white/10 py-12 md:py-16 text-center md:text-left">
             <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -14,13 +17,14 @@ export function Footer() {
                         <span>QWaste</span>
                     </div>
                     <p className="text-zinc-400 text-sm leading-relaxed">
-                        Biến thời gian thành tài sản,<br />
-                        Biến dữ liệu thành hành động.
+                        {t.rich('tagline', {
+                            br: () => <br />
+                        })}
                     </p>
                 </div>
 
                 <div>
-                    <h3 className="text-white font-semibold mb-4">Solution</h3>
+                    <h3 className="text-white font-semibold mb-4">{t('solution')}</h3>
                     <ul className="space-y-2 text-zinc-400 text-sm">
                         <li><a href="#" className="hover:text-qwaste-accent transition-colors">Digital Factory</a></li>
                         <li><a href="#" className="hover:text-qwaste-accent transition-colors">Smart Monitoring</a></li>
@@ -29,16 +33,16 @@ export function Footer() {
                 </div>
 
                 <div>
-                    <h3 className="text-white font-semibold mb-4">Company</h3>
+                    <h3 className="text-white font-semibold mb-4">{t('company')}</h3>
                     <ul className="space-y-2 text-zinc-400 text-sm">
-                        <li><a href="#" className="hover:text-qwaste-accent transition-colors">About Us</a></li>
-                        <li><a href="#" className="hover:text-qwaste-accent transition-colors">Contact</a></li>
-                        <li><a href="#" className="hover:text-qwaste-accent transition-colors">Careers</a></li>
+                        <li><a href="#" className="hover:text-qwaste-accent transition-colors">{t('about')}</a></li>
+                        <li><a href="#" className="hover:text-qwaste-accent transition-colors">{t('contact')}</a></li>
+                        <li><a href="#" className="hover:text-qwaste-accent transition-colors">{t('careers')}</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h3 className="text-white font-semibold mb-4">Contact</h3>
+                    <h3 className="text-white font-semibold mb-4">{t('contact')}</h3>
                     <ul className="space-y-2 text-zinc-400 text-sm">
                         <li>info@qwaste.com</li>
                         <li>(+84) 123 456 789</li>
@@ -46,7 +50,7 @@ export function Footer() {
                 </div>
             </div>
             <div className="container mx-auto px-4 mt-12 border-t border-white/5 pt-8 text-center text-zinc-500 text-sm">
-                © {new Date().getFullYear()} QWaste Digital Factory. All rights reserved.
+                {t('rights', { year: new Date().getFullYear() })}
             </div>
         </footer>
     );

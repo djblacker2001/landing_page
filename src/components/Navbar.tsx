@@ -1,13 +1,16 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export function Navbar() {
+    const t = useTranslations('Navbar');
     const [scrolled, setScrolled] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
 
@@ -18,6 +21,12 @@ export function Navbar() {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    const navLinks = [
+        { href: "/#vision", label: t('vision') },
+        { href: "/#solution", label: t('solution') },
+        { href: "/#impact", label: t('impact') },
+    ];
 
     return (
         <header
@@ -38,31 +47,42 @@ export function Navbar() {
                             className="object-contain"
                         />
                     </div>
-                    <span className="text-white font-bold text-xl tracking-tight">
+                    <span className="text-white font-bold text-xl tracking-tight hidden sm:block">
                         QWaste <span className="text-qwaste-accent">Digital Factory</span>
+                    </span>
+                    <span className="text-white font-bold text-xl tracking-tight sm:hidden">
+                        QWaste
                     </span>
                 </Link>
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex items-center gap-8">
-                    <Link href="#vision" className="text-zinc-300 hover:text-white transition-colors">Vision</Link>
-                    <Link href="#solution" className="text-zinc-300 hover:text-white transition-colors">Solution</Link>
-                    <Link href="#impact" className="text-zinc-300 hover:text-white transition-colors">Impact</Link>
+                    {navLinks.map((link) => (
+                        <Link key={link.href} href={link.href} className="text-zinc-300 hover:text-white transition-colors">
+                            {link.label}
+                        </Link>
+                    ))}
+
+                    <LanguageSwitcher />
+
                     <Link
-                        href="#contact"
+                        href="/#contact"
                         className="px-5 py-2 rounded-full bg-qwaste-accent text-qwaste-dark font-bold hover:bg-white transition-colors"
                     >
-                        Get Started
+                        {t('getStarted')}
                     </Link>
                 </nav>
 
                 {/* Mobile Toggle */}
-                <button
-                    className="md:hidden text-white p-2"
-                    onClick={() => setIsOpen(!isOpen)}
-                >
-                    {isOpen ? <X /> : <Menu />}
-                </button>
+                <div className="flex items-center gap-4 md:hidden">
+                    <LanguageSwitcher />
+                    <button
+                        className="text-white p-2"
+                        onClick={() => setIsOpen(!isOpen)}
+                    >
+                        {isOpen ? <X /> : <Menu />}
+                    </button>
+                </div>
             </div>
 
             {/* Mobile Nav */}
@@ -72,13 +92,22 @@ export function Navbar() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-qwaste-dark/95 backdrop-blur-xl border-t border-white/10"
+                        className="md:hidden bg-qwaste-dark border-b border-white/10 overflow-hidden"
                     >
                         <div className="flex flex-col p-4 gap-4">
-                            <Link href="#vision" onClick={() => setIsOpen(false)} className="text-zinc-200 py-2">Vision</Link>
-                            <Link href="#solution" onClick={() => setIsOpen(false)} className="text-zinc-200 py-2">Solution</Link>
-                            <Link href="#impact" onClick={() => setIsOpen(false)} className="text-zinc-200 py-2">Impact</Link>
-                            <Link href="#contact" onClick={() => setIsOpen(false)} className="text-qwaste-accent py-2 font-bold">Get Started</Link>
+                            {navLinks.map((link) => (
+                                <Link
+                                    key={link.href}
+                                    href={link.href}
+                                    onClick={() => setIsOpen(false)}
+                                    className="text-zinc-200 py-3 border-b border-white/5 hover:text-white transition-colors"
+                                >
+                                    {link.label}
+                                </Link>
+                            ))}
+                            <Link href="/#contact" onClick={() => setIsOpen(false)} className="text-qwaste-accent py-3 font-bold hover:text-white transition-colors">
+                                {t('getStarted')}
+                            </Link>
                         </div>
                     </motion.div>
                 )}

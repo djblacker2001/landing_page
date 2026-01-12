@@ -3,34 +3,39 @@
 import { Section } from "./Section";
 import { Check } from "lucide-react";
 import { ConsultationForm } from "./ConsultationForm";
+import { useTranslations } from 'next-intl';
 
 export function Impact() {
+    const t = useTranslations('Impact');
     const data = [
-        { factor: "Time", direct: "Giảm thời gian chờ, tối ưu quy trình", impact: "Tăng sản lượng mỗi ca" },
-        { factor: "Efficiency", direct: "Nâng cao hiệu suất máy & nhân sự", impact: "Giảm lỗi, ổn định chất lượng" },
-        { factor: "Cost", direct: "Giảm chi phí năng lượng & vận hành", impact: "Tăng biên lợi nhuận" },
-        { factor: "Competitiveness", direct: "Giao hàng nhanh hơn, minh bạch hơn", impact: "Củng cố vị thế thị trường" },
-        { factor: "Revenue", direct: "Năng suất & sản lượng tăng", impact: "Tăng doanh thu bền vững" },
+        { factor: t('row1Factor'), direct: t('row1Direct'), impact: t('row1Impact') },
+        { factor: t('row2Factor'), direct: t('row2Direct'), impact: t('row2Impact') },
+        { factor: t('row3Factor'), direct: t('row3Direct'), impact: t('row3Impact') },
+        { factor: t('row4Factor'), direct: t('row4Direct'), impact: t('row4Impact') },
+        { factor: t('row5Factor'), direct: t('row5Direct'), impact: t('row5Impact') },
     ];
 
     return (
         <Section id="impact" bg="dark">
             <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                    Tác động <span className="text-qwaste-accent">Chiến lược</span>
+                    {t.rich('title', {
+                        accent: (chunks) => <span className="text-qwaste-accent">{chunks}</span>
+                    })}
                 </h2>
                 <p className="text-zinc-400">
-                    Hiệu quả đo lường được trên từng chỉ số vận hành
+                    {t('subtitle')}
                 </p>
             </div>
 
-            <div className="overflow-x-auto">
+            {/* Desktop Table */}
+            <div className="hidden md:block overflow-x-auto">
                 <table className="w-full min-w-[600px] border-collapse">
                     <thead>
                         <tr className="border-b border-white/10">
-                            <th className="py-4 px-6 text-left text-zinc-400 font-medium uppercase text-sm">Yếu tố</th>
-                            <th className="py-4 px-6 text-left text-zinc-400 font-medium uppercase text-sm">Kết quả trực tiếp</th>
-                            <th className="py-4 px-6 text-left text-zinc-400 font-medium uppercase text-sm">Tác động cuối cùng</th>
+                            <th className="py-4 px-6 text-left text-zinc-400 font-medium uppercase text-sm">{t('headerFactor')}</th>
+                            <th className="py-4 px-6 text-left text-zinc-400 font-medium uppercase text-sm">{t('headerDirect')}</th>
+                            <th className="py-4 px-6 text-left text-zinc-400 font-medium uppercase text-sm">{t('headerImpact')}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -52,16 +57,40 @@ export function Impact() {
                 </table>
             </div>
 
+            {/* Mobile Cards */}
+            <div className="md:hidden space-y-4">
+                {data.map((row, idx) => (
+                    <div key={idx} className="bg-white/5 border border-white/10 rounded-xl p-6 space-y-4">
+                        <div className="flex items-center justify-between">
+                            <h3 className="text-xl font-bold text-white">{row.factor}</h3>
+                            <Check className="w-5 h-5 text-qwaste-accent" />
+                        </div>
+                        <div className="space-y-2">
+                            <div>
+                                <div className="text-xs text-zinc-500 uppercase font-medium mb-1">{t('headerDirect')}</div>
+                                <div className="text-zinc-300">{row.direct}</div>
+                            </div>
+                            <div className="pt-2 border-t border-white/5">
+                                <div className="text-xs text-zinc-500 uppercase font-medium mb-1">{t('headerImpact')}</div>
+                                <div className="text-green-400 font-medium">{row.impact}</div>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
             <div className="mt-20 relative rounded-2xl bg-qwaste-light/20 border border-qwaste-light/30 p-8 md:p-12 text-center overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-qwaste-dark/50" />
                 <div className="relative z-10 space-y-6">
                     <h3 className="text-2xl md:text-3xl font-bold leading-tight">
-                        “QWaste không chỉ là phần mềm<br />
-                        mà là chiến lược tối ưu thời gian của doanh nghiệp sản xuất.”
+                        {t.rich('quote', {
+                            br: () => <br />
+                        })}
                     </h3>
                     <p className="text-lg text-zinc-300 max-w-2xl mx-auto">
-                        Giúp doanh nghiệp <span className="text-white font-bold">NHÌN - HIỂU - HÀNH ĐỘNG</span> trên dữ liệu thật,
-                        từ đó tăng năng suất, giảm chi phí và phát triển bền vững.
+                        {t.rich('quoteDesc', {
+                            bold: (chunks) => <span className="text-white font-bold">{chunks}</span>
+                        })}
                     </p>
                     <div id="consultation-form" className="pt-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch text-left">
                         <div className="w-full min-h-[400px] h-full rounded-xl overflow-hidden border border-white/10 bg-white/5 relative group">
@@ -75,7 +104,6 @@ export function Impact() {
                             />
                             <div className="absolute bottom-0 left-0 right-0 p-4 bg-qwaste-dark/80 backdrop-blur-md border-t border-white/10">
                                 <p className="text-white font-medium text-sm flex items-center gap-2">
-                                    <span className="text-xl">📍</span>
                                     Nam Kỳ Khởi Nghĩa, Định Hoà, Thủ Dầu Một, Bình Dương
                                 </p>
                             </div>

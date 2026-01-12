@@ -2,24 +2,27 @@
 
 import { Section } from "./Section";
 import { Check, Layers, Database, BarChart3, Settings, ShieldCheck, Zap } from "lucide-react";
+import { useTranslations } from 'next-intl';
 
 export function Solution() {
+    const t = useTranslations('Solution');
+
     const goals = [
-        "Chuẩn hóa quy trình sản xuất và vận hành",
-        "Tự động hóa thu thập dữ liệu thời gian thực",
-        "Nâng cao hiệu suất thiết bị & con người (OEE)",
-        "Tối ưu kế hoạch bảo trì & giảm downtime",
-        "Hỗ trợ ra quyết định dựa trên dữ liệu"
+        t('goal1'),
+        t('goal2'),
+        t('goal3'),
+        t('goal4'),
+        t('goal5')
     ];
 
     const modules = [
-        { icon: Layers, name: "Data Collection" },
-        { icon: BarChart3, name: "Monitoring" },
-        { icon: Database, name: "Analytics" },
-        { icon: Settings, name: "Optimization" },
-        { icon: ShieldCheck, name: "Maintenance" },
-        { icon: Zap, name: "Energy" },
-        { icon: Layers, name: "Reporting" },
+        { icon: Layers, name: t('modCollection') },
+        { icon: BarChart3, name: t('modMonitoring') },
+        { icon: Database, name: t('modAnalytics') },
+        { icon: Settings, name: t('modOptimization') },
+        { icon: ShieldCheck, name: t('modMaintenance') },
+        { icon: Zap, name: t('modEnergy') },
+        { icon: Layers, name: t('modReporting') },
     ];
 
     return (
@@ -29,7 +32,7 @@ export function Solution() {
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     <div>
                         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-qwaste">
-                            Mục tiêu dự án
+                            {t('goalsTitle')}
                         </h2>
                         <div className="space-y-4">
                             {goals.map((goal, idx) => (
@@ -45,7 +48,7 @@ export function Solution() {
 
                     <div className="relative h-full min-h-[400px] bg-qwaste rounded-2xl overflow-hidden p-8 text-white flex flex-col justify-center">
                         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
-                        <h3 className="text-2xl font-bold mb-6 relative z-10">Smart Factory Framework</h3>
+                        <h3 className="text-2xl font-bold mb-6 relative z-10">{t('frameworkTitle')}</h3>
                         <div className="space-y-6 relative z-10">
                             <dl className="space-y-2 border-l-2 border-white/20 pl-4">
                                 <dt className="text-qwaste-accent font-semibold text-sm">Connectivity</dt>
@@ -66,7 +69,7 @@ export function Solution() {
                 {/* Modules Grid */}
                 <div className="text-center space-y-8">
                     <h2 className="text-3xl font-bold text-qwaste">
-                        7 Module Chức Năng
+                        {t('modulesTitle')}
                     </h2>
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
                         {modules.map((mod, idx) => (

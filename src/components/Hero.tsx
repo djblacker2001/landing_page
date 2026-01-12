@@ -3,8 +3,11 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Clock, Database, TrendingUp } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useTranslations } from 'next-intl';
 
 export function Hero() {
+    const t = useTranslations('Hero');
+
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-qwaste-dark text-white selection:bg-qwaste-accent/30">
             {/* Background gradients */}
@@ -29,27 +32,31 @@ export function Hero() {
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
                         </span>
-                        <span>Giải pháp Số hóa Sản xuất Toàn diện</span>
+                        <span>{t('tagline')}</span>
                     </motion.div>
 
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-white/50 pb-2">
-                        QWaste <span className="text-qwaste-accent">Digital Factory</span>
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-white/50 pb-2">
+                        {t.rich('title', {
+                            accent: (chunks) => <span className="block text-qwaste-accent sm:inline">{chunks}</span>
+                        })}
                     </h1>
 
-                    <p className="max-w-3xl mx-auto text-xl md:text-2xl text-zinc-300 leading-relaxed font-light">
-                        Biến <span className="text-white font-medium">Thời gian</span> thành tài sản. <br />
-                        Biến <span className="text-white font-medium">Dữ liệu</span> thành hành động.
+                    <p className="max-w-3xl mx-auto text-lg sm:text-xl md:text-2xl text-zinc-300 leading-relaxed font-light">
+                        {t.rich('subtitle', {
+                            bold: (chunks) => <span className="text-white font-medium">{chunks}</span>,
+                            br: () => <br className="hidden sm:block" />
+                        })}
                     </p>
 
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4, duration: 0.5 }}
-                        className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8"
+                        className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8 w-full sm:w-auto px-4 sm:px-0"
                     >
                         <button className="group relative px-8 py-4 rounded-full bg-qwaste-accent text-qwaste-dark font-bold text-lg transition-all hover:shadow-[0_0_30px_rgba(0,224,255,0.4)] hover:scale-105">
                             <span className="relative z-10 flex items-center gap-2">
-                                Khám phá Giải pháp
+                                {t('explore')}
                                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                             </span>
                         </button>
@@ -57,7 +64,7 @@ export function Hero() {
                             onClick={() => document.getElementById('consultation-form')?.scrollIntoView({ behavior: 'smooth' })}
                             className="px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-semibold text-lg hover:bg-white/10 transition-colors backdrop-blur-sm"
                         >
-                            Liên hệ Team
+                            {t('contact')}
                         </button>
                     </motion.div>
                 </motion.div>
