@@ -1,0 +1,69 @@
+MÔ TẢ DỰ ÁN
+GIẢI PHÁP SỐ HÓA SẢN XUẤT TOÀN DIỆN - QWaste Digital Factory
+
+I. Bối cảnh và tầm nhìn chiến lược
+Trong bối cảnh chuyển đổi số và phát triển công nghiệp bền vững, khái niệm về
+năng suất đã có sự thay đổi căn bản. Năng suất không còn được đo lường bằng số lượng
+sản phẩm tạo ra, mà được đánh giá dựa trên tốc độ ra quyết định và khả năng khai thác
+dữ liệu trong vận hành sản xuất.
+Trong nền sản xuất hiện đại, yếu tố cạnh tranh không còn nằm ở việc sở hữu nhiều
+máy móc hơn, mà ở năng lực tận dụng dữ liệu để tối ưu thời gian, nâng cao hiệu suất và
+gia tăng lợi nhuận. Trên thế giới, các quốc gia công nghiệp tiên tiến đã bước sang giai
+đoạn Sản xuất thông minh (Smart Manufacturing), nơi mỗi dây chuyển, mỗi thiết bị và
+từng giây vận hành đều mang giá trị kinh tế rõ rệt.
+Tại Việt Nam, xu hướng này đang được đẩy mạnh trong các khu công nghiệp và
+nhà máy thông minh, khi doanh nghiệp buộc phải chuyển đổi dữ liệu sản xuất thành năng
+suất thực tế nhằm duy trì năng lực cạnh tranh và phát triển bền vững. Trong bối cảnh đó,
+thời gian trở thành đơn vị tiền tệ của năng suất - doanh nghiệp nào kiểm soát được thời
+gian, doanh nghiệp đó làm chủ chi phí, thị trường và doanh thu.
+Mỗi giây được tối ưu trong quy trình sản xuất đồng nghĩa với:
+- Hiệu suất cao hơn: Máy móc vận hành ổn định, nhân lực được phân bổ hợp lý;
+- Chi phí thấp hơn: Giảm thiểu năng lượng tiêu hao, thời gian chờ và thao tác dư
+thừa;
+- Năng lượng sử dụng hiệu quả hơn: Vận hành dựa trên dữ liệu thực tế thay vì
+cảm tính;
+- Lợi nhuận bền vững hơn: Nhờ quản trị dựa trên nền tảng dữ liệu minh bạch.
+Với tầm nhìn đó, QWaste Digital Factory được phát triển như một nền tảng số hóa
+toàn diện cho sản xuất hiện đại, hướng tới mục tiêu:
+- Biến thời gian thành tài sản,
+- Biến dữ liệu thành hành động,
+- Và biến hiệu suất thành lợi nhuận.
+Giải pháp xoay quanh 5 trụ giá trị chiến lược, thể hiện mối liên kết giữa hiệu
+quả vận hành và tăng trưởng doanh nghiệp:
+Time -> Efficiency -> Cost -> Competitiveness -> Revenue
+II. Mục tiêu dự án
+- Chuẩn hóa quy trình sản xuất và vận hành.
+- Tự động hóa việc thu thập, giám sát và báo cáo dữ liệu thời gian thực.
+- Nâng cao hiệu suất thiết bị, con người và năng lượng (OEE, KPI, EEI).
+- Tối ưu kế hoạch bảo trì, cảnh báo sớm sự cố và giảm downtime.
+- Hỗ trợ quản lý ra quyết định dựa trên dữ liệu (Data-driven management).
+III. Tổng quan giải pháp
+QWaste Digital Factory là phần mềm thu thập - giám sát - phân tích - tối ưu
+hoạt động sản xuất theo thời gian thực, gồm 7 module chức năng được triển khai linh
+hoạt theo từng giai đoạn.
+Hệ thống được thiết kế để đáp ứng mô hình nhà máy thông minh (Smart Factory)
+với khả năng kết nối chuẩn OPC UA / MQTT / Modbus TCP và lưu trữ dữ liệu tập
+trung tại Data Hub (SQL Server / InfluxDB).
+VIII. Tác động chiến lược
+Yếu tố |Kết quả trực tiếp| Tác động cuối cùng
+
+
+
+Time|Giảm thời gian chờ, tối ưu quy trình| Tăng sản lượng mỗi ca
+
+
+Efficiency|Nâng cao hiệu suất máy & nhân sự|Giảm lỗi, ổn định chất lượng
+
+
+Cost| Giảm chi phí năng lượng & vận hành|Tăng biên lợi nhuận
+
+Competitiveness| Giao hàng nhanh hơn, minh bạch hơn |Củng cố vị thế thị trường
+
+
+Revenue|Năng suất & sản lượng tăng|Tăng doanh thu bền vững
+
+IX. Thông điệp chốt
+“QWaste không chỉ là phần mềm - mà là chiến lược tối ưu thời gian của doanh
+nghiệp sản xuất. Giúp doanh nghiệp nhìn - hiểu - hành động trên dữ liệu thật, từ đó
+tăng năng suất, giảm chi phí và phát triển bền vững."
+

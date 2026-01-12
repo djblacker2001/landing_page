@@ -1,20 +1,28 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-qwaste: #1A057A;
+  --color-qwaste-light: #2A0896;
+  --color-qwaste-dark: #0F0247;
+  --color-qwaste-accent: #00E0FF;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
 
 :root {
-  --background: 255 255 255;
-  --foreground: 0 0 0;
+  --background: #ffffff;
+  --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: 10 10 10;
-    --foreground: 255 255 255;
+    --background: #0a0a0a;
+    --foreground: #ededed;
   }
 }
 
 body {
-  color: rgb(var(--foreground));
-  background: rgb(var(--background));
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
 }
