@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: "QWaste Digital Factory",
   description: "Digital Manufacturing Solution",
   icons: {
-    icon: "/LogoIIC.svg",
+    icon: "/iic4.0.svg",
   },
 };
 
