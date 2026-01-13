@@ -55,7 +55,14 @@
         "modOptimization": "Tối ưu hóa",
         "modMaintenance": "Bảo trì",
         "modEnergy": "Năng lượng",
-        "modReporting": "Báo cáo"
+        "modReporting": "Báo cáo",
+        "modDescCollection": "Tự động hóa việc lấy dữ liệu từ cảm biến và máy móc IoT theo thời gian thực (Real-time).",
+        "modDescMonitoring": "Trực quan hóa trạng thái hoạt động của toàn bộ nhà máy trên biểu đồ Dashboard tập trung.",
+        "modDescAnalytics": "Sử dụng AI để phát hiện xu hướng, điểm nghẽn và nguyên nhân gây lãng phí trong quy trình.",
+        "modDescOptimization": "Đồng bộ hóa luồng thông tin giữa tầng sản xuất (OT) và tầng quản trị (IT) không gián đoạn.",
+        "modDescMaintenance": "Cảnh báo tức thì các lỗi dừng máy hoặc sai lệch chỉ số vận hành qua Mobile/Email.",
+        "modDescEnergy": "Thiết lập cấu hình hệ thống, phân quyền người dùng và quản lý danh mục thiết bị.",
+        "modDescReporting": "Xuất báo cáo OEE, năng suất và chất lượng tự động với độ chính xác tuyệt đối."
     },
     "Impact": {
         "title": "Tác động <accent>Chiến lược</accent>",

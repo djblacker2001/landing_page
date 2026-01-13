@@ -55,7 +55,14 @@
         "modOptimization": "Optimization",
         "modMaintenance": "Maintenance",
         "modEnergy": "Energy",
-        "modReporting": "Reporting"
+        "modReporting": "Reporting",
+        "modDescCollection": "Automated real-time data collection from sensors and IoT machines.",
+        "modDescMonitoring": "Visualizing the operational status of the entire factory on a centralized Dashboard.",
+        "modDescAnalytics": "Using AI to detect trends, bottlenecks, and causes of waste in the process.",
+        "modDescOptimization": "Seamless synchronization of information flow between the production floor (OT) and management level (IT).",
+        "modDescMaintenance": "Instant alerts for machine downtime or operational index deviations via Mobile/Email.",
+        "modDescEnergy": "Configure system settings, user permissions, and manage device categories.",
+        "modDescReporting": "Automatically export OEE, productivity, and quality reports with absolute precision."
     },
     "Impact": {
         "title": "Strategic <accent>Impact</accent>",

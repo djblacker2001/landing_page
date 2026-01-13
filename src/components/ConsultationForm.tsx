@@ -51,7 +51,7 @@ export function ConsultationForm() {
     };
 
     return (
-        <div className="w-full max-w-md mx-auto bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-8">
+        <div className="w-full max-w-md mx-auto bg-white/80 backdrop-blur-xl shadow-2xl shadow-navy/20 border border-white rounded-2xl p-6 md:p-8">
             <AnimatePresence mode="wait">
                 {status === "success" ? (
                     <motion.div
@@ -59,11 +59,11 @@ export function ConsultationForm() {
                         animate={{ opacity: 1, scale: 1 }}
                         className="flex flex-col items-center text-center space-y-4 py-8"
                     >
-                        <div className="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center">
-                            <CheckCircle2 className="w-8 h-8 text-green-400" />
+                        <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
+                            <CheckCircle2 className="w-8 h-8 text-green-600" />
                         </div>
-                        <h3 className="text-xl font-bold text-white">{t('success')}</h3>
-                        <p className="text-zinc-400">
+                        <h3 className="text-xl font-bold text-zinc-900">{t('success')}</h3>
+                        <p className="text-zinc-600">
                             {t('subtitle')}
                         </p>
                         <button
@@ -71,7 +71,7 @@ export function ConsultationForm() {
                                 setStatus("idle");
                                 setFormState({ name: "", phone: "", email: "", message: "" });
                             }}
-                            className="mt-4 text-sm text-qwaste-accent hover:text-white transition-colors"
+                            className="mt-4 text-sm text-cobalt hover:text-navy transition-colors font-medium"
                         >
                             {t('submit')}
                         </button>
@@ -85,8 +85,8 @@ export function ConsultationForm() {
                         className="space-y-4"
                     >
                         <div className="text-center mb-6">
-                            <h3 className="text-xl font-bold text-white mb-2">{t('title')}</h3>
-                            <p className="text-sm text-zinc-400">{t('subtitle')}</p>
+                            <h3 className="text-xl font-bold text-zinc-900 mb-2">{t('title')}</h3>
+                            <p className="text-sm text-zinc-600">{t('subtitle')}</p>
                         </div>
 
                         <div className="space-y-4">
@@ -98,7 +98,7 @@ export function ConsultationForm() {
                                     placeholder={t('name')}
                                     value={formState.name}
                                     onChange={handleChange}
-                                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-zinc-500 focus:outline-none focus:border-qwaste-accent focus:ring-1 focus:ring-qwaste-accent transition-all"
+                                    className="w-full bg-soft border border-blue-100 rounded-lg px-4 py-3 text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-cobalt focus:ring-1 focus:ring-cobalt transition-all"
                                 />
                             </div>
 
@@ -110,7 +110,7 @@ export function ConsultationForm() {
                                     placeholder={t('phone')}
                                     value={formState.phone}
                                     onChange={handleChange}
-                                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-zinc-500 focus:outline-none focus:border-qwaste-accent focus:ring-1 focus:ring-qwaste-accent transition-all"
+                                    className="w-full bg-soft border border-blue-100 rounded-lg px-4 py-3 text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-cobalt focus:ring-1 focus:ring-cobalt transition-all"
                                 />
                             </div>
 
@@ -122,7 +122,7 @@ export function ConsultationForm() {
                                     placeholder={t('email')}
                                     value={formState.email}
                                     onChange={handleChange}
-                                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-zinc-500 focus:outline-none focus:border-qwaste-accent focus:ring-1 focus:ring-qwaste-accent transition-all"
+                                    className="w-full bg-soft border border-blue-100 rounded-lg px-4 py-3 text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-cobalt focus:ring-1 focus:ring-cobalt transition-all"
                                 />
                             </div>
 
@@ -133,7 +133,7 @@ export function ConsultationForm() {
                                     placeholder={t('message')}
                                     value={formState.message}
                                     onChange={handleChange}
-                                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-zinc-500 focus:outline-none focus:border-qwaste-accent focus:ring-1 focus:ring-qwaste-accent transition-all resize-none"
+                                    className="w-full bg-soft border border-blue-100 rounded-lg px-4 py-3 text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-cobalt focus:ring-1 focus:ring-cobalt transition-all resize-none"
                                 />
                             </div>
                         </div>
@@ -141,7 +141,7 @@ export function ConsultationForm() {
                         <button
                             type="submit"
                             disabled={status === "submitting"}
-                            className="w-full flex items-center justify-center gap-2 bg-qwaste-accent text-qwaste-dark font-bold py-3 px-6 rounded-lg hover:bg-white transition-colors disabled:opacity-70 disabled:cursor-not-allowed mt-6"
+                            className="w-full flex items-center justify-center gap-2 bg-cobalt text-white font-bold py-3 px-6 rounded-lg hover:bg-navy transition-colors disabled:opacity-70 disabled:cursor-not-allowed mt-6 shadow-lg shadow-cobalt/20"
                         >
                             {status === "submitting" ? (
                                 <>

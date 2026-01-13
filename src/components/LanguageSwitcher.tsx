@@ -12,7 +12,7 @@ export function LanguageSwitcher() {
 
     function onSelectChange(nextLocale: string) {
         startTransition(() => {
-            router.replace(pathname, { locale: nextLocale });
+            router.replace(pathname, { locale: nextLocale, scroll: false });
         });
     }
 
@@ -20,14 +20,14 @@ export function LanguageSwitcher() {
         <div className="flex items-center gap-1">
             <button
                 onClick={() => onSelectChange('vi')}
-                className={`text-sm font-medium transition-colors ${locale === 'vi' ? 'text-qwaste-accent' : 'text-zinc-400 hover:text-white'}`}
+                className={`text-sm font-medium transition-colors ${locale === 'vi' ? 'text-cobalt font-bold' : 'text-zinc-500 hover:text-cobalt'}`}
             >
                 VN
             </button>
-            <span className="text-zinc-600">|</span>
+            <span className="text-zinc-300">|</span>
             <button
                 onClick={() => onSelectChange('en')}
-                className={`text-sm font-medium transition-colors ${locale === 'en' ? 'text-qwaste-accent' : 'text-zinc-400 hover:text-white'}`}
+                className={`text-sm font-medium transition-colors ${locale === 'en' ? 'text-cobalt font-bold' : 'text-zinc-500 hover:text-cobalt'}`}
             >
                 EN
             </button>
