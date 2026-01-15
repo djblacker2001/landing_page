@@ -52,3 +52,25 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
 }
+
+.go-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 1000;
+}
+
+.go-to-top:hover {
+  transform: scale(1.1);
+  background-color: #1e40af;
+}

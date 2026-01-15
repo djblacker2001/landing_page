@@ -3,6 +3,7 @@ import { Vision } from "@/components/Vision";
 import { Pillars } from "@/components/Pillars";
 import { Solution } from "@/components/Solution";
 import { Impact } from "@/components/Impact";
+import GoToTop from "@/components/GoToTop";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Pillars />
       <Solution />
       <Impact />
+      <GoToTop/>
     </main>
   );
 }
